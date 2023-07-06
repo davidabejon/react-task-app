@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/react';
 import React, { Component } from 'react'
 
 class CreatingScreen extends Component {
@@ -42,9 +43,9 @@ class CreatingScreen extends Component {
     render() { 
         return (
             <div className='container mt-5'>
-                <h1>Introduzca los datos de su nueva tarea</h1>
+                <h1><Trans id='nueva-tarea'>Introduzca los datos de su nueva tarea</Trans></h1>
                 <form className='d-flex flex-column gap-2'>
-                    <label htmlFor='titulo'>Titulo</label>
+                    <label htmlFor='titulo'><Trans id='titulo-crear'>Titulo</Trans></label>
                     <input
                         ref={this.tituloRef}
                         id='titulo'
@@ -52,7 +53,7 @@ class CreatingScreen extends Component {
                         className='form-control'
                         placeholder='Escriba el título...'>
                     </input>
-                    <label htmlFor='descripcion'>Descripcion</label>
+                    <label htmlFor='descripcion'><Trans id='desripcion-crear'>Descripcion</Trans></label>
                     <textarea
                         ref={this.descripcionRef}
                         id='descripcion'
@@ -61,8 +62,8 @@ class CreatingScreen extends Component {
                         placeholder='Escriba la descripción...'
                         rows={6}>
                     </textarea>
-                    <button onClick={this.createTask} className='btn btn-primary'>Añadir</button>
-                    <button onClick={this.goBack} className='btn btn-outline-secondary'>Atrás</button>
+                    <button onClick={this.createTask} className='btn btn-primary'><Trans id='add-crear'>Añadir</Trans></button>
+                    <button onClick={this.goBack} className='btn btn-outline-secondary'><Trans id='atras-crear'>Atrás</Trans></button>
                 </form>
             </div>
         );

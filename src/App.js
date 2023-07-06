@@ -3,6 +3,9 @@ import Task from './componentes/Task';
 import EditingScreen from './componentes/EditingScreen';
 import CreatingScreen from './componentes/CreatingScreen';
 
+import { Trans } from '@lingui/macro';
+import { i18n } from '@lingui/core'
+
 class App extends Component {
 
   state = {
@@ -114,7 +117,21 @@ class App extends Component {
           <div className='d-flex gap-3 justify-content-center mt-5'>
             <h1>Task App</h1>
             <button onClick={this.newTaskMenu} className='btn btn-primary'>
-                Añadir nueva tarea
+                <Trans>
+                  Añadir nueva tarea
+                </Trans>
+            </button>
+          </div>
+          <div className='mt-4 d-flex gap-3 justify-content-center'>
+            <button className='btn btn-outline-info' onClick={() => i18n.activate('es')}>
+              <Trans>
+                Español
+              </Trans>
+            </button>
+            <button className='btn btn-outline-info' onClick={() => i18n.activate('en')}>
+              <Trans>
+                Inglés
+              </Trans>
             </button>
           </div>
           <div className='d-flex flex-column gap-5 align-items-center text-center mt-5'>

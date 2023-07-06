@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Trans } from '@lingui/macro';
 
 class Task extends Component {
 
@@ -16,7 +17,11 @@ class Task extends Component {
             <div>
                 <h2>{this.props.titulo}</h2>
                 <p>{this.props.descripcion}</p>
-                <button onClick={this.editTask} className='btn btn-outline-secondary'>Editar tarea</button>
+                <button onClick={this.editTask} className='btn btn-outline-secondary'>
+                    <Trans>
+                        Editar tarea
+                    </Trans>
+                </button>
             </div>
         );
     }

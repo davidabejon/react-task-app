@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Trans } from '@lingui/macro';
 
 class EditingScreen extends Component {
 
@@ -66,9 +67,9 @@ class EditingScreen extends Component {
     render() { 
         return (
             <div className='container mt-5'>
-                <h1 className=''>Edición de tarea</h1>
+                <h1 className=''><Trans>Edición de tarea</Trans></h1>
                 <form className='d-flex flex-column gap-2'>
-                    <label htmlFor='titulo'>Titulo</label>
+                    <label htmlFor='titulo'><Trans id='titulo-editar'>Titulo</Trans></label>
                     <input
                         value={this.state.titulo}
                         onChange={(evt) => this.getValueTitulo(evt)}
@@ -77,7 +78,7 @@ class EditingScreen extends Component {
                         className='form-control'
                         placeholder='Escriba el título...'>
                     </input>
-                    <label htmlFor='descripcion'>Descripcion</label>
+                    <label htmlFor='descripcion'><Trans id='descripcion-editar'>Descripcion</Trans></label>
                     <textarea
                         value={this.state.descripcion}
                         onChange={(evt) => this.getValueDescripcion(evt)}
@@ -87,9 +88,9 @@ class EditingScreen extends Component {
                         placeholder='Escriba la descripción...'
                         rows={6}>
                     </textarea>
-                    <button onClick={this.editTask} className='btn btn-primary'>Editar</button>
-                    <button onClick={this.deleteTask} className='btn btn-danger'>Borrar</button>
-                    <button onClick={this.goBack} className='btn btn-outline-secondary'>Atrás</button>
+                    <button onClick={this.editTask} className='btn btn-primary'><Trans>Editar</Trans></button>
+                    <button onClick={this.deleteTask} className='btn btn-danger'><Trans>Borrar</Trans></button>
+                    <button onClick={this.goBack} className='btn btn-outline-secondary'><Trans id='atras-editar'>Atrás</Trans></button>
                 </form>
             </div>
         );
